@@ -2,6 +2,7 @@
 @model IndexModel
 @{
     ViewData["Title"] = "Home page";
+    Layout = "_Layout";
 }
 
 <div class="text-center">
@@ -13,10 +14,18 @@
             </a>
     </p>
     <p>
-        Auto Generate EF models:
-        <i><b>
-        dotnet ef dbcontext scaffold "Server=.\;Database=AdventureWorks2019;Trusted_Connection=True;TrustServerCertificate=True" Microsoft.EntityFrameworkCore.SqlServer -o Models
-            </b>
-        </i>
+        <b>Auto Generate EF models:</b>
+        <p>
+            <i>
+                <b>
+                    dotnet ef dbcontext scaffold "Server=.\;Database=AdventureWorks2019;Trusted_Connection=True;TrustServerCertificate=True" Microsoft.EntityFrameworkCore.SqlServer -o Models
+                </b>
+            </i>
+        </p>
+
+        <!-- Tag Helpers -->
+        <p>
+            <a asp-controller="CustomEmployees" asp-action="Details" asp-route-id="1">Tag Helpers are HTML markup code that executes server side</a>
+        </p>
     </p>
 </div>
